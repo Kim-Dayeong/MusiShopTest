@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mappers.shop">
+	<!-- 아이템 목록 -->
+	<select id="list" resultType="com.shop.domain.ItemVO">
+		select temId, temName, temPrice, temUserId, temStock from shopDB.Item
+	
+	</select>
+
+	<!-- 아이템 등록 -->
+	<insert id="write" parameterType="com.shop.domain.ItemVO">
+		insert into shopDB.item(temId, temName, temPrice, temUserId, temStock) 
+		values (#{temId},#{temName},#{temPrice},#{temUserId},#{temStock})
+	</insert>
+	
+	<!-- 아이템 조회 -->
+	<select id="view" parameterType="int" resultType="com.shop.domain.ItemVO">
+		select 
+			temId, temName, temPrice, temUserId, temStock 
+		from 
+			shopDB.Item 
+		where 
+			temId = #{temId}
+	
+	</select>
+</mapper>
