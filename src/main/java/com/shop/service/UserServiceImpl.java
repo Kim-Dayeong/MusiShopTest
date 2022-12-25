@@ -12,10 +12,15 @@ public class UserServiceImpl implements UserService {
 	
 	@Inject
 	UserDAO dao;
-	
+	//회원가입 
 	@Override
 	public void join(UserVO vo)throws Exception {
 		dao.join(vo);
+	}
+	//로그인 
+	@Override
+	public UserVO login(UserVO vo)throws Exception{
+		return dao.login(vo);
 	}
 
 }

@@ -17,6 +17,8 @@ grade int(11)
 
 public class UserVO {
 	
+	private String userId;
+	
 	private String userName;
 	private String userPass;
 	private String userMail;
@@ -79,6 +81,12 @@ public class UserVO {
 	}
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 }

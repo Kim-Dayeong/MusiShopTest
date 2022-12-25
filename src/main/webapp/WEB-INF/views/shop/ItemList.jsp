@@ -11,8 +11,9 @@
 <table>
 	<thead>
 		<tr>
-			<th>번호</th>
-			<th>이름</th>
+	
+			<th>상품번호</th>
+			<th>상품명</th>
 			<th>가격</th>
 			<th>판매자</th>
 			<th>수량</th>
