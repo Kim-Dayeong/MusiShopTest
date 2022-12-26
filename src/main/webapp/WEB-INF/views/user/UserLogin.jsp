@@ -20,7 +20,7 @@
 <input type="text" name="userPass" /><br />
 
 
-<button type="submit">회원가입</button>
+<button type="submit">로그인</button>
 
 </form>
 
