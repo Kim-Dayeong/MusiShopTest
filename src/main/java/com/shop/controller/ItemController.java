@@ -53,15 +53,20 @@ public class ItemController {
 		
 		model.addAttribute("view", vo);
 	}
+
+
+	//아이템 목록(페이징 구현)
+	@RequestMapping(value="/ItemListPage", method=RequestMethod.GET)
+	public void getListPage(Model model)throws Exception {
+		List<ItemVO> list = null;
+		list = service.list();
+		
+		model.addAttribute("list",list);
+		
+	}
+
 }
 	
 
-
-//		 @RequestMapping(value = "/ItemList", method = RequestMethod.GET)
-//		 public void getList() throws Exception {
-//		  
-//		   
-//		 }
-//		}
 
 

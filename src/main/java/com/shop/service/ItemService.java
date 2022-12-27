@@ -14,4 +14,7 @@ public interface ItemService {
 
 	//아이템 조회
 	public ItemVO view(int temId) throws Exception;
+	
+	//아이템 총 갯수 
+	public int count() throws Exception;
 }

@@ -36,6 +36,11 @@ public class ItemDAOImpl implements ItemDAO {
 		
 		return sql.selectOne(namespace + ".view", temId);
 	}
+	//아이템 총 갯수 
+	@Override
+	public int count() throws Exception{
+		return sql.selectOne(namespace + ".count");
+	}
 	
 	
 }

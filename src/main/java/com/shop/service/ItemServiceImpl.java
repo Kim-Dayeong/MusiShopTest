@@ -33,5 +33,11 @@ public class ItemServiceImpl implements ItemService {
 	public ItemVO view(int temId) throws Exception{
 		return dao.view(temId);
 	}
+	
+	//아이템 총 갯수 
+	@Override
+	public int count() throws Exception{
+		return dao.count();
+	}
 
 }
