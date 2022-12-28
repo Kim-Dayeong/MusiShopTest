@@ -39,5 +39,11 @@ public class ItemServiceImpl implements ItemService {
 	public int count() throws Exception{
 		return dao.count();
 	}
+	
+	//게시물 목록 + 페이징 
+	@Override
+	public List<ItemVO> listPage(int displayItem, int itemNum)throws Exception{
+		return dao.listPage(displayItem, itemNum);
+	}
 
 }

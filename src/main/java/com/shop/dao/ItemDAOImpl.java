@@ -1,5 +1,6 @@
 package com.shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -42,5 +43,16 @@ public class ItemDAOImpl implements ItemDAO {
 		return sql.selectOne(namespace + ".count");
 	}
 	
+	
+	//아이템 목록 + 페이징 
+	@Override
+	public List<ItemVO> listPage(int displayItem, int itemNum) throws Exception{
+		
+		HashMap<String, Integer> data = new HashMap<String, Integer>();
+		data.put("displayitem", displayItem);
+		data.put("itemNum", itemNum);
+		
+		return sql.selectList(namespace + ".listPage", data); 
+	}
 	
 }

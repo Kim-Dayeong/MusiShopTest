@@ -17,4 +17,7 @@ public interface ItemService {
 	
 	//아이템 총 갯수 
 	public int count() throws Exception;
+	
+	//게시물 목록 + 페이징 
+	public List<ItemVO> listPage(int displayItem, int itemNum)throws Exception;
 }

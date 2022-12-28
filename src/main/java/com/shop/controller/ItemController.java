@@ -57,11 +57,26 @@ public class ItemController {
 
 	//아이템 목록(페이징 구현)
 	@RequestMapping(value="/ItemListPage", method=RequestMethod.GET)
-	public void getListPage(Model model)throws Exception {
+	public void getListPage(Model model ,@RequestParam("num")int num)throws Exception {
+		
+		// 아이템 총 목록 
+		int count = service.count();
+		
+		// 한 페이지에 출력할 아이템 수 
+		int itemNum = 10;
+		
+		// 하단 페이징 번호 (게시물 총 갯수 / 한페이지 출력 갯수)
+		int pageNum = (int)Math.ceil((double)count/itemNum);
+		
+		// 출력할 아이템 
+		int displayItem = (num - 1) * itemNum;
+		
+		
 		List<ItemVO> list = null;
-		list = service.list();
+		list = service.listPage(displayItem, itemNum);
 		
 		model.addAttribute("list",list);
+		model.addAttribute("pageNum", pageNum);
 		
 	}
 
