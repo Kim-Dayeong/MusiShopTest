@@ -43,7 +43,9 @@ public class ItemServiceImpl implements ItemService {
 	//게시물 목록 + 페이징 
 	@Override
 	public List<ItemVO> listPage(int displayItem, int itemNum)throws Exception{
+		System.out.println("서비스에서값:"+displayItem);
 		return dao.listPage(displayItem, itemNum);
+		
 	}
 
 }

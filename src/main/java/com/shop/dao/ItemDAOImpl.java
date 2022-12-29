@@ -49,8 +49,10 @@ public class ItemDAOImpl implements ItemDAO {
 	public List<ItemVO> listPage(int displayItem, int itemNum) throws Exception{
 		
 		HashMap<String, Integer> data = new HashMap<String, Integer>();
+		
 		data.put("displayitem", displayItem);
 		data.put("itemNum", itemNum);
+		System.out.println(" DAO 데이터"+data);
 		
 		return sql.selectList(namespace + ".listPage", data); 
 	}

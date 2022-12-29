@@ -35,7 +35,9 @@
 	  <!-- 아이템 목록 + 페이징 -->
 	  <select id="listPage" parameterType="hashMap" resultType = "com.shop.domain.ItemVO">
 	  
-	   select temId, temName, temPrice, temUserId, temStock,temDate from shopdb.item order by temId desc limit #{displayItem}, {postitem}
+	   select
+	    temId, temName, temPrice, temUserId, temStock,temDate 
+	   from shopdb.item order by temId desc limit #{itemNum}, #{displayItem}
 	  
 	  </select>
 	
