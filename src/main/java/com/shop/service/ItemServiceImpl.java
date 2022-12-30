@@ -40,12 +40,10 @@ public class ItemServiceImpl implements ItemService {
 		return dao.count();
 	}
 	
-	//게시물 목록 + 페이징 
+	// 게시물 목록 + 페이징
 	@Override
-	public List<ItemVO> listPage(int displayItem, int itemNum)throws Exception{
-		System.out.println("서비스에서값:"+displayItem);
-		return dao.listPage(displayItem, itemNum);
-		
+	public List listPage(int displayPost, int postNum) throws Exception {
+	 return dao.listPage(displayPost, postNum);
 	}
 
 }

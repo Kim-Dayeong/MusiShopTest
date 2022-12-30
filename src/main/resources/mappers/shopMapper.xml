@@ -26,20 +26,20 @@
 			
 	</select>
 			
-	<!-- 페이징 처리 -->
-	<!-- 아이템 총 갯수 -->
-		<select id="count" resultType="int">
-			select count(temId) from shopdb.item
-		</select>
-		
-	  <!-- 아이템 목록 + 페이징 -->
-	  <select id="listPage" parameterType="hashMap" resultType = "com.shop.domain.ItemVO">
-	  
-	   select
-	    temId, temName, temPrice, temUserId, temStock,temDate 
-	   from shopdb.item order by temId desc limit #{itemNum}, #{displayItem}
-	  
-	  </select>
+<!-- 게시물 총 갯수 -->
+<select id="count" resultType="int">
+	 select count(temId) from shopdb.item
+</select>
+
+<!-- 아이템 목록 + 페이징 -->
+<select id="listPage" parameterType="hashMap" resultType="com.shop.domain.ItemVO">
+	select 
+		temId, temName, temPrice, temUserId, temStock,temDate
+	 from 
+	 	shopdb.item order by temId desc 
+	 	limit #{displayPost}, #{postNum}
+
+</select>
 	
 	
 </mapper>

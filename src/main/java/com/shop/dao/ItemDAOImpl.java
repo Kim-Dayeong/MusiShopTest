@@ -37,24 +37,24 @@ public class ItemDAOImpl implements ItemDAO {
 		
 		return sql.selectOne(namespace + ".view", temId);
 	}
-	//아이템 총 갯수 
+	
+	//아이템 총 갯수
 	@Override
 	public int count() throws Exception{
-		return sql.selectOne(namespace + ".count");
+		return sql.selectOne(namespace + ".count"); 
 	}
 	
-	
-	//아이템 목록 + 페이징 
+	// 게시물 목록 + 페이징
 	@Override
-	public List<ItemVO> listPage(int displayItem, int itemNum) throws Exception{
-		
-		HashMap<String, Integer> data = new HashMap<String, Integer>();
-		
-		data.put("displayitem", displayItem);
-		data.put("itemNum", itemNum);
-		System.out.println(" DAO 데이터"+data);
-		
-		return sql.selectList(namespace + ".listPage", data); 
+	public List listPage(int displayPost, int postNum) throws Exception {
+
+	 HashMap data = new HashMap();
+	  
+	 data.put("displayPost", displayPost);
+	 data.put("postNum", postNum);
+	  
+	 return sql.selectList(namespace + ".listPage", data);
 	}
+
 	
 }
