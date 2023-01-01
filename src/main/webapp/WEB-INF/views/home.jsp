@@ -20,6 +20,7 @@
 <p><a href="/user/UserLogin">로그인</a></p>
 <p><a href="/shop/ItemList">아이템 리스트</a></p>
 <p><a href="/shop/ItemListPage?num=1">아이템 리스트(페이징)</a></p>
+<p><a href="/shop/ItemPageSearch?num=1">아이템 리스트(검색)</a></p>
 <p><a href="/shop/ItemWrite">아이템 작성</a></p>
 
 </body>
