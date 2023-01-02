@@ -40,6 +40,37 @@
 	 	limit #{displayPost}, #{postNum}
 
 </select>
+
+
+<!-- 검색-->
+<select id="listPageSearch" parameterType="hashMap" resultType="com.shop.domain.ItemVO">
+	select 
+		temId, temName, temPrice, temUserId, temStock,temDate
+	 from 
+	 	shopdb.item
+	 	
+	 <if test='searchType.equals("temName")'>	
+	  where temName like concat('%',#{keyword},'%')
+	</if>
+	
+	 <if test='searchType.equals("temUserId")'>	
+	  where temUserId like concat('%',#{keyword},'%')
+	</if>
+	
+	 <if test='searchType.equals("temName_Id")'>	
+	  where temName like concat('%',#{keyword},'%')
+	  	or temUserId like concat('%',#{keyword},'%')
+	</if>
+	
+	 <if test='searchType.equals("temPrice")'>	
+	  where temPrice like concat('%',#{keyword},'%')
+	</if>
+	
+	order by bno desc
+		limit #{displayPost}, #{postNum}
+	
+</select>
+
 	
 	
 </mapper>

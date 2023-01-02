@@ -68,10 +68,11 @@
 	
 	<div>
   <select name="searchType">
-      <option value="title">제목</option>
-         <option value="content">내용</option>
-      <option value="title_content">제목+내용</option>
-      <option value="writer">작성자</option>
+      <option value="temname">상품명</option>
+         <option value="temuserid">판매자명</option>
+         <option value="temanduser">상품+판매자명</option>
+      <option value="tempeice">가격</option>
+     
   </select>
   
   <input type="text" name="keyword" />
