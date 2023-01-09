@@ -56,24 +56,24 @@ public class ItemController {
 	}
 
 	//아이템목록 , 페이징 
-	@RequestMapping(value = "/ItemListpage", method = RequestMethod.GET)
-	public void getListPage(Model model, @RequestParam("num")int num) throws Exception {
-		
-		ItemPage page = new ItemPage();
-		
-		page.setNum(num);
-		page.setCount(service.count());
-		
-		List<ItemVO> list = null;
-		list = service.listPage(page.getDisplayPost(), page.getPostNum());
-		
-		model.addAttribute("list", list);
-		model.addAttribute("page", page);
-
-		model.addAttribute("select", num);
-	}
-
-	
+//	@RequestMapping(value = "/ItemListpage", method = RequestMethod.GET)
+//	public void getListPage(Model model, @RequestParam("num")int num) throws Exception {
+//		
+//		ItemPage page = new ItemPage();
+//		
+//		page.setNum(num);
+//		page.setCount(service.count());
+//		
+//		List<ItemVO> list = null;
+//		list = service.listPage(page.getDisplayPost(), page.getPostNum());
+//		
+//		model.addAttribute("list", list);
+//		model.addAttribute("page", page);
+//
+//		model.addAttribute("select", num);
+//	}
+//
+//	
 
 }
 	
