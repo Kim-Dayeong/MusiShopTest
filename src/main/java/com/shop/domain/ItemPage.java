@@ -81,6 +81,8 @@ public class ItemPage {
 	public void setNext(boolean next) {
 		this.next = next;
 	}
+	
+	
 	private void dataCalc() {
 		 // 마지막 번호
 		 endPageNum = (int)(Math.ceil((double)num / (double)pageNumCnt) * pageNumCnt);
