@@ -68,18 +68,32 @@
 	
 	<div>
   <select name="searchType">
-      <option value="temname">상품명</option>
-         <option value="temuserid">판매자명</option>
+      <option value="temName">상품명</option>
+         <option value="temUserId">판매자명</option>
          <option value="temanduser">상품+판매자명</option>
-      <option value="tempeice">가격</option>
+      <option value="temPrice">가격</option>
      
   </select>
   
   <input type="text" name="keyword" />
   
-  <button type="button">검색</button>
+  <button type="button" id="searchBtn">검색</button>
  </div>
-	
+
+
+<script>
+
+ document.getElementById("searchBtn").onclick = function () {
+    
+  let searchType = document.getElementsByName("searchType")[0].value;
+  let keyword =  document.getElementsByName("keyword")[0].value;
+  
+  console.log(searchType)
+  console.log(keyword)
+  
+  location.href = "/shop/ItemPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" + keyword;
+ };
+</script>
 	
 
 <!--  

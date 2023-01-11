@@ -68,8 +68,8 @@ public class ItemDAOImpl implements ItemDAO {
 	  
 	  data.put("searchType", searchType);
 	  data.put("keyword", keyword);
-	  
-	  return sql.selectList(namespace + ".ItemPageSearch", data);
+	
+	  return sql.selectList(namespace + ".listPageSearch", data);
 	 }
 
 	

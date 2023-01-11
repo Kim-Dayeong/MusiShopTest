@@ -75,8 +75,29 @@ public class ItemController {
 
 	
 	//아이템목록 , 페이징 
+//	@RequestMapping(value = "/ItemPageSearch", method = RequestMethod.GET)
+//	public void getListPaging(Model model, @RequestParam("num")int num) throws Exception {
+//		
+//		ItemPage page = new ItemPage();
+//		
+//		page.setNum(num);
+//		page.setCount(service.count());
+//		
+//		List<ItemVO> list = null;
+//		list = service.listPage(page.getDisplayPost(), page.getPostNum());
+//		
+//		model.addAttribute("list", list);
+//		model.addAttribute("page", page);
+//
+//		model.addAttribute("select", num);
+//	}
+//	
+	//아이템 목록 , 페이징 , 검색 
 	@RequestMapping(value = "/ItemPageSearch", method = RequestMethod.GET)
-	public void getSearchPage(Model model, @RequestParam("num")int num) throws Exception {
+	public void getListPageSearch(Model model, @RequestParam("num")int num,
+			@RequestParam(value = "searchType",required = false, defaultValue = "temName")String searchType,
+			@RequestParam(value = "keyword",required = false, defaultValue = "" )String keyword
+			) throws Exception {
 		
 		ItemPage page = new ItemPage();
 		
@@ -84,11 +105,10 @@ public class ItemController {
 		page.setCount(service.count());
 		
 		List<ItemVO> list = null;
-		list = service.listPage(page.getDisplayPost(), page.getPostNum());
+		list = service.listPageSearch(page.getDisplayPost(),page.getPostNum(),searchType, keyword);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("page", page);
-
 		model.addAttribute("select", num);
 	}
 
