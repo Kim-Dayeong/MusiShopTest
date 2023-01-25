@@ -4,40 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ItemList</title>
+<title>아이템 리스트</title>
 </head>
 <body>
+<c:forEach items="${list}" var="list">
 
-<table>
-	<thead>
-		<tr>
-	
-			<th>상품번호</th>
-			<th>상품명</th>
-			<th>가격</th>
-			<th>판매자</th>
-			<th>수량</th>
-			
-		</tr>
-	</thead>
-	
-	<tbody>
-		<c:forEach items="${list}" var="list">
-		 <tr>
-		  <td>${list.temId}</td>
-		 <td>
-		  
-		 	<a href="/shop/ItemView?temId=${list.temId}">${list.temName}</a>
-		 </td>
-		  <td>${list.temPrice}</td>
-		  <td>${list.temUserId}</td>
-		  <td>${list.temStock}</td>
-		 </tr>
-		</c:forEach>
-	
-	</tbody>
+<tr>
+<td><c:out value="${list.selid}"/></td>
+<td><c:out value="${list.title}"/></td>
+<td><c:out value="${list.cdtitle}"/></td>
+<td><c:out value="${list.price}"/></td>
+<td><c:out value="${list.cdimg}"/></td>
+</tr>
+</c:forEach>
 
-</table>
+
+
+
+
 
 </body>
 </html>

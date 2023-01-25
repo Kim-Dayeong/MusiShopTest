@@ -5,7 +5,7 @@
 <mapper namespace="com.shop.mappers.shop">
 	<!-- 아이템 목록 -->
 	<select id="list" resultType="com.shop.domain.ItemVO">
-		select temId, temName, temPrice, temUserId, temStock from shopDB.Item
+		select selid,title,cdtitle,price,cdimg from musi.item
 	
 	</select>
 
@@ -17,12 +17,11 @@
 	
 	<!-- 아이템 조회 -->
 	<select id="view" parameterType="int" resultType="com.shop.domain.ItemVO">
-		select 
-			temId, temName, temPrice, temUserId, temStock 
-		from 
-			shopDB.Item 
-		where 
-			temId = #{temId}
+	
+			
+	select id,selid,title,cdtitle,cdid,cdimg,detail,regdate from musi.item where id = #{id}
+			
+			
 			
 	</select>
 			

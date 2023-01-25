@@ -22,35 +22,37 @@ public class ItemServiceImpl implements ItemService {
 		return dao.list();
 		
 	}
-	// 아이템 작성 
-	@Override
-	public void write(ItemVO vo) throws Exception{
-		dao.write(vo);
-	}
 	
 	//아이템 조회
 	@Override
-	public ItemVO view(int temId) throws Exception{
-		return dao.view(temId);
+	public ItemVO view(int id) throws Exception{
+		return dao.view(id);
 	}
-	
-	//아이템 총 갯수 
-	@Override
-	public int count() throws Exception{
-		return dao.count();
-	}
-	
-	// 아이템 목록 + 페이징
-	@Override
-	public List listPage(int displayPost, int postNum) throws Exception {
-	 return dao.listPage(displayPost, postNum);
-	}
-	
-	// 아이템 목록 + 페이징 + 검색
-	@Override
-	public List<ItemVO> listPageSearch(
-	  int displayPost, int postNum, String searchType, String keyword) throws Exception {
-	 return  dao.listPageSearch(displayPost, postNum, searchType, keyword);
-	}
+//	// 아이템 작성 
+//	@Override
+//	public void write(ItemVO vo) throws Exception{
+//		dao.write(vo);
+//	}
+//	
+
+//	
+//	//아이템 총 갯수 
+//	@Override
+//	public int count() throws Exception{
+//		return dao.count();
+//	}
+//	
+//	// 아이템 목록 + 페이징
+//	@Override
+//	public List listPage(int displayPost, int postNum) throws Exception {
+//	 return dao.listPage(displayPost, postNum);
+//	}
+//	
+//	// 아이템 목록 + 페이징 + 검색
+//	@Override
+//	public List<ItemVO> listPageSearch(
+//	  int displayPost, int postNum, String searchType, String keyword) throws Exception {
+//	 return  dao.listPageSearch(displayPost, postNum, searchType, keyword);
+//	}
 
 }

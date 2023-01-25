@@ -1,5 +1,8 @@
 package com.shop.domain;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 public class ItemVO {
 	/*
 	 * 
@@ -10,57 +13,95 @@ temUserId varchar(50)
 temStock int(11) 
 temText varchar(500) 
 temImg varchar(2
+
+
+
+id int(11) PK 
+selid varchar(50) 
+title varchar(50) 
+cdtitle varchar(50) 
+cdid varchar(20) 
+setlist int(11) 
+price decimal(10,0) 
+cdimg varchar(50) 
+detail varchar(50) 
+regdate datetime
 	 */
 	
-	private String temId;
-	private String temName;
-	private int temPrice;
-	public int getTemPrice() {
-		return temPrice;
+	private int id;
+	private String selid;
+	private String title;
+	private String cdtitle;
+	private String cdid;
+	private int setlist;
+	private BigDecimal price;
+	private String cdimg;
+	private String detail;
+	private Date regdate;
+	
+	
+	public int getId() {
+		return id;
 	}
-	public void setTemPrice(int temPrice) {
-		this.temPrice = temPrice;
+	public void setId(int id) {
+		this.id = id;
 	}
-	private String temUserId;
-	private int temStock;
-	private String temText;
-	private String temImg;
-	public String getTemId() {
-		return temId;
+	public String getSelid() {
+		return selid;
 	}
-	public void setTemId(String temId) {
-		this.temId = temId;
+	public void setSelid(String selid) {
+		this.selid = selid;
 	}
-	public String getTemName() {
-		return temName;
+	public String getTitle() {
+		return title;
 	}
-	public void setTemName(String temName) {
-		this.temName = temName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getTemUserId() {
-		return temUserId;
+	public String getCdtitle() {
+		return cdtitle;
 	}
-	public void setTemUserId(String temUserId) {
-		this.temUserId = temUserId;
+	public void setCdtitle(String cdtitle) {
+		this.cdtitle = cdtitle;
 	}
-	public int getTemStock() {
-		return temStock;
+	public String getCdid() {
+		return cdid;
 	}
-	public void setTemStock(int temStock) {
-		this.temStock = temStock;
+	public void setCdid(String cdid) {
+		this.cdid = cdid;
 	}
-	public String getTemText() {
-		return temText;
+	public int getSetlist() {
+		return setlist;
 	}
-	public void setTemText(String temText) {
-		this.temText = temText;
+	public void setSetlist(int setlist) {
+		this.setlist = setlist;
 	}
-	public String getTemImg() {
-		return temImg;
+	public BigDecimal getPrice() {
+		return price;
 	}
-	public void setTemImg(String temImg) {
-		this.temImg = temImg;
+	public void setPrice(BigDecimal price) {
+		this.price = price;
 	}
+	public String getCdimg() {
+		return cdimg;
+	}
+	public void setCdimg(String cdimg) {
+		this.cdimg = cdimg;
+	}
+	public String getDetail() {
+		return detail;
+	}
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	
+
 	
 
 }

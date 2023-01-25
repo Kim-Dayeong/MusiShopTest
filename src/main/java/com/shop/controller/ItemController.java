@@ -32,51 +32,39 @@ public class ItemController {
 		
 	}
 	
-	//아이템 작성 get 
-	@RequestMapping(value="/ItemWrite", method = RequestMethod.GET)
-	public void getWrite() throws Exception {
-		
-	}
-	
-	//아이템 작성 post
-	@RequestMapping(value = "/ItemWrite", method = RequestMethod.POST)
-	public String postWrite(ItemVO vo) throws Exception {
-		service.write(vo);
-		
-		return "redirect:/shop/ItemList";
-		
-	}
-	
-	//아이템 조회
+	//아이템 조회(음악조회)
 	@RequestMapping(value = "/ItemView", method = RequestMethod.GET)
-	public void getView(@RequestParam("temId") int temId, Model model) throws Exception {
-		ItemVO vo = service.view(temId);
+	public void getView(@RequestParam("id") int id, Model model) throws Exception {
+		ItemVO vo = service.view(id);
 		
 		model.addAttribute("view", vo);
 	}
-
-	//아이템목록 , 페이징 
-	@RequestMapping(value = "/ItemListPage", method = RequestMethod.GET)
-	public void getListPage(Model model, @RequestParam("num")int num) throws Exception {
-		
-		ItemPage page = new ItemPage();
-		
-		page.setNum(num);
-		page.setCount(service.count());
-		
-		List<ItemVO> list = null;
-		list = service.listPage(page.getDisplayPost(), page.getPostNum());
-		
-		model.addAttribute("list", list);
-		model.addAttribute("page", page);
-
-		model.addAttribute("select", num);
-	}
-
 	
-	//아이템목록 , 페이징 
+//	//아이템 작성 get 
+//	@RequestMapping(value="/ItemWrite", method = RequestMethod.GET)
+//	public void getWrite() throws Exception {
+//		
+//	}
+//	
+//	//아이템 작성 post
+//	@RequestMapping(value = "/ItemWrite", method = RequestMethod.POST)
+//	public String postWrite(ItemVO vo) throws Exception {
+//		service.write(vo);
+//		
+//		return "redirect:/shop/ItemList";
+//		
+//	}
+//	
+
+//
+//
+//	
+//	//아이템 목록 , 페이징 , 검색 
 //	@RequestMapping(value = "/ItemPageSearch", method = RequestMethod.GET)
-//	public void getListPaging(Model model, @RequestParam("num")int num) throws Exception {
+//	public void getListPageSearch(Model model, @RequestParam("num")int num,
+//			@RequestParam(value = "searchType",required = false, defaultValue = "temName")String searchType,
+//			@RequestParam(value = "keyword",required = false, defaultValue = "" )String keyword
+//			) throws Exception {
 //		
 //		ItemPage page = new ItemPage();
 //		
@@ -84,33 +72,12 @@ public class ItemController {
 //		page.setCount(service.count());
 //		
 //		List<ItemVO> list = null;
-//		list = service.listPage(page.getDisplayPost(), page.getPostNum());
+//		list = service.listPageSearch(page.getDisplayPost(),page.getPostNum(),searchType, keyword);
 //		
 //		model.addAttribute("list", list);
 //		model.addAttribute("page", page);
-//
 //		model.addAttribute("select", num);
 //	}
-//	
-	//아이템 목록 , 페이징 , 검색 
-	@RequestMapping(value = "/ItemPageSearch", method = RequestMethod.GET)
-	public void getListPageSearch(Model model, @RequestParam("num")int num,
-			@RequestParam(value = "searchType",required = false, defaultValue = "temName")String searchType,
-			@RequestParam(value = "keyword",required = false, defaultValue = "" )String keyword
-			) throws Exception {
-		
-		ItemPage page = new ItemPage();
-		
-		page.setNum(num);
-		page.setCount(service.count());
-		
-		List<ItemVO> list = null;
-		list = service.listPageSearch(page.getDisplayPost(),page.getPostNum(),searchType, keyword);
-		
-		model.addAttribute("list", list);
-		model.addAttribute("page", page);
-		model.addAttribute("select", num);
-	}
 
 }
 	

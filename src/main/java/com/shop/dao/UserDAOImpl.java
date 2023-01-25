@@ -1,6 +1,7 @@
 package com.shop.dao;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -23,8 +24,10 @@ public class UserDAOImpl implements UserDAO {
 	
 	//로그인
 	@Override
-	public UserVO login(UserVO vo)throws Exception{
-		return sql.selectOne(namespace +".login", vo);
+	public UserVO login(UserVO vo) throws Exception{
+		return sql.selectOne(namespace + ".login", vo);
 	}
+	
+
 
 }

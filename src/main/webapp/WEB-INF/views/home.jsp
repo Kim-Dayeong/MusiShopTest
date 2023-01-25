@@ -16,11 +16,13 @@
 
 
 <p><a href="/user/UserJoin">회원가입</a></p>
-<p><a href="/user/UserLogin">로그인</a></p>
-<p><a href="/shop/ItemList">아이템 리스트</a></p>
-<p><a href="/shop/ItemListPage?num=1">아이템 리스트(페이징)</a></p>
+
 <p><a href="/shop/ItemPageSearch?num=1">아이템 리스트(검색)</a></p>
 <p><a href="/shop/ItemWrite">아이템 작성</a></p>
+
+
+<p>수정중</p>
+<p><a href="/shop/ItemList">아이템 보기</a></p>
 
 </body>
 </html>

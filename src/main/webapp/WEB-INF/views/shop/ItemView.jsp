@@ -12,20 +12,26 @@
 
 
 
+<label>앨범커버</label>
+${view.cdimg}<br />
 
-<label>상품명</label>
-${view.temName}<br />
+<label>앨범명</label>
+${view.cdtitle}<br />
 
-
-<label>물건 가격</label>
-${view.temPrice}<br />
-
-<label>판매자 아이디</label>
-${view.temUserId}<br />
+<label>음악 제목</label>
+${view.title}<br />
 
 
-<label>상품갯수</label>
-${view.temStock}<br />
+<label>아티스트명</label>
+${view.selid}<br />
+
+
+<label>출시연도</label>
+${view.regdate}<br />
+
+<label>상세</label>
+${view.detail}<br />
+
 
 
 </form>
