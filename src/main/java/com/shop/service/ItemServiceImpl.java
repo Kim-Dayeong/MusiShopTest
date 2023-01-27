@@ -28,11 +28,11 @@ public class ItemServiceImpl implements ItemService {
 	public ItemVO view(int id) throws Exception{
 		return dao.view(id);
 	}
-//	// 아이템 작성 
-//	@Override
-//	public void write(ItemVO vo) throws Exception{
-//		dao.write(vo);
-//	}
+	// 아이템 작성 
+	@Override
+	public void write(ItemVO vo) throws Exception{
+		dao.write(vo);
+	}
 //	
 
 //	

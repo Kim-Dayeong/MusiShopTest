@@ -12,9 +12,9 @@ public interface ItemService {
 	//아이템 조회
 	public ItemVO view(int id) throws Exception;
 
-//	//아이템 작성 
-//	public void write(ItemVO vo) throws Exception;
-//
+	//아이템 작성 
+	public void write(ItemVO vo) throws Exception;
+
 
 //	
 //	//아이템 총 갯수 

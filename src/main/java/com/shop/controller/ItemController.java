@@ -40,20 +40,20 @@ public class ItemController {
 		model.addAttribute("view", vo);
 	}
 	
-//	//아이템 작성 get 
-//	@RequestMapping(value="/ItemWrite", method = RequestMethod.GET)
-//	public void getWrite() throws Exception {
-//		
-//	}
-//	
-//	//아이템 작성 post
-//	@RequestMapping(value = "/ItemWrite", method = RequestMethod.POST)
-//	public String postWrite(ItemVO vo) throws Exception {
-//		service.write(vo);
-//		
-//		return "redirect:/shop/ItemList";
-//		
-//	}
+	//아이템 작성 get - 아이템 작성 페이지로 이동 
+	@RequestMapping(value="/ItemWrite", method = RequestMethod.GET)
+	public void getWrite() throws Exception {
+		
+	}
+	
+	//아이템 작성 post - 아이템 작성후 값 전달 생성 
+	@RequestMapping(value = "/ItemWrite", method = RequestMethod.POST)
+	public String postWrite(ItemVO vo) throws Exception {
+		service.write(vo);
+		
+		return "redirect:/shop/ItemList";
+		
+	}
 //	
 
 //

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mappers.album">
+
+<!-- 앨범 목록 -->
+
+<select id="list" resultType="com.shop.domain.AlbumVO">
+		select id,title,artist,reldate,img from musi.album
+	
+	</select>
+
+
+	
+</mapper>

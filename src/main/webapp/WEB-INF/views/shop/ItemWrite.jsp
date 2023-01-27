@@ -11,22 +11,34 @@
 <form method="post">
 
 
-<label>아이템 아이디</label>
-<input type="text" name="temId" /><br />
+<label>id(수정)</label>
+<input type="text" name="id" /><br />
 
-<label>상품명</label>
-<input type="text" name="temName" /><br />
-
-
-<label>물건 가격</label>
-<input type="text" name="temPrice" /><br />
-
-<label>판매자 아이디</label>
-<input type="text" name="temUserId" /><br />
+<label>selid(수정)</label>
+<input type="text" name="selid" /><br />
 
 
-<label>상품갯수</label>
-<input type="text" name="temStock" /><br />
+<label>음악 제목</label>
+<input type="text" name="title" /><br />
+
+<label>앨범 제목</label>
+<input type="text" name="cdtitle" /><br />
+
+
+<label>cdid(수정)</label>
+<input type="text" name="cdid" /><br />
+
+<label>setlist</label>
+<input type="text" name="setlist" /><br />
+
+<label>가격</label>
+<input type="text" name="price" /><br />
+
+<label>앨범커버</label>
+<input type="text" name="cdImg" /><br />
+
+<label>상세</label>
+<input type="text" name="detail" /><br />
 
 <button type="submit">작성</button>
 

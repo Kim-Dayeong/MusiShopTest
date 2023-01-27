@@ -32,12 +32,12 @@ public class ItemDAOImpl implements ItemDAO {
 		
 		return sql.selectOne(namespace + ".view", id);
 	}
-//	//아이템 작성
-//	@Override
-//	public void write(ItemVO vo)throws Exception {
-//		sql.insert(namespace + ".write", vo);
-//	}
-//	
+	//아이템 작성
+	@Override
+	public void write(ItemVO vo)throws Exception {
+		sql.insert(namespace + ".write", vo);
+	}
+	
 
 //	
 //	//아이템 총 갯수

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이템 리스트</title>
+<title>앨범 리스트</title>
 </head>
 <body>
 <c:forEach items="${list}" var="list">
@@ -12,12 +12,12 @@
 <tr>
 <td>${list.id}</td>
 <td>
-	<a href="/shop/ItemView?id=${list.id}">${list.title}</a>
-<td><c:out value="${list.selid}"/></td>
+
+<td><c:out value="${list.id}"/></td>
 <td><c:out value="${list.title}"/></td>
-<td><c:out value="${list.cdtitle}"/></td>
-<td><c:out value="${list.price}"/></td>
-<td><c:out value="${list.cdimg}"/></td>
+<td><c:out value="${list.artist}"/></td>
+<td><c:out value="${list.reldate}"/></td>
+<td><c:out value="${list.img}"/></td>
 </tr>
 </c:forEach>
 
