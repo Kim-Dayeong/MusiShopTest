@@ -2,6 +2,7 @@ package com.shop.service;
 
 import java.util.List;
 
+import com.shop.domain.Criteria;
 import com.shop.domain.ItemVO;
 
 public interface ItemService {
@@ -14,6 +15,9 @@ public interface ItemService {
 
 	//아이템 작성 
 	public void write(ItemVO vo) throws Exception;
+	
+	//페이징
+	public List<ItemVO> listCriteria(Criteria criteria)throws Exception;
 
 
 //	

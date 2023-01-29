@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.shop.domain.ItemPage;
+import com.shop.domain.Criteria;
 import com.shop.domain.ItemVO;
+import com.shop.domain.PageMaker;
 import com.shop.service.ItemService;
 
 @Controller
@@ -52,6 +53,22 @@ public class ItemController {
 		service.write(vo);
 		
 		return "redirect:/shop/ItemList";
+		
+	}
+	
+	//페이징
+	@RequestMapping(value = "/listPaging", method = RequestMethod.GET)
+	public String listPaging(Model model, Criteria criteria) throws Exception {
+		//logger.info("listPaging...");
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(1000);
+		
+		model.addAttribute("paging",service.listCriteria(criteria));
+		model.addAttribute("pageMaker",pageMaker);
+		
+		return "/shop/ListPaging";
 		
 	}
 //	

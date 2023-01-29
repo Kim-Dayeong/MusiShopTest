@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.shop.domain.Criteria;
 import com.shop.domain.ItemVO;
 
 @Repository
@@ -38,6 +39,24 @@ public class ItemDAOImpl implements ItemDAO {
 		sql.insert(namespace + ".write", vo);
 	}
 	
+	
+	//페이징 
+	@Override
+	public List<ItemVO> listPaging(int page) throws Exception{
+		if (page <= 0) {
+			page = 1;
+		}
+		
+		page = (page - 1) * 5;
+		
+		return sql.selectList(namespace + ".listPaging", page);
+	
+	}
+	
+	
+	public List<ItemVO> listCriteria(Criteria criteria)throws Exception{
+		return sql.selectList(namespace + ".listCriteria", criteria);
+	}
 
 //	
 //	//아이템 총 갯수

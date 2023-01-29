@@ -23,25 +23,35 @@
 	
 			
 	select id,selid,title,cdtitle,cdid,cdimg,detail,regdate from musi.item where id = #{id}
-			
-			
+	
 			
 	</select>
+	
+	
+	
+	<!-- 페이징 -->
+<select id="listPaging" parameterType="hashMap" resultType="com.shop.domain.ItemVO">
+<![CDATA[
+	select id,selid,title,cdtitle,price,cdimg from musi.item 
+	where id >0 order by id DESC, 
+	regdate DESC LIMIT #{page},5	
+]]>
+</select>
+	
+<select id="listCriteria" parameterType="hashMap" resultType="com.shop.domain.ItemVO">
+<![CDATA[
+	select id,selid,title,cdtitle,price,cdimg from musi.item 
+	where id >0 order by id DESC, 
+	regdate DESC LIMIT #{pageStart},#{perPageNum}	
+]]>
+
+</select>
 			
 <!-- 게시물 총 갯수 -->
 <select id="count" resultType="int">
-	 select count(temId) from shopdb.item
+	 select count(id) from musi.item
 </select>
 
-<!-- 아이템 목록 + 페이징 -->
-<select id="listPage" parameterType="hashMap" resultType="com.shop.domain.ItemVO">
-	select 
-		temId, temName, temPrice, temUserId, temStock,temDate
-	 from 
-	 	shopdb.item order by temId desc 
-	 	limit #{displayPost}, #{postNum}
-
-</select>
 
 
 <!-- 검색-->

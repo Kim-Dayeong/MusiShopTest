@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.shop.dao.ItemDAO;
+import com.shop.domain.Criteria;
 import com.shop.domain.ItemVO;
 
 @Service
@@ -33,6 +34,13 @@ public class ItemServiceImpl implements ItemService {
 	public void write(ItemVO vo) throws Exception{
 		dao.write(vo);
 	}
+	
+	//페이징
+	@Override
+		public List<ItemVO> listCriteria(Criteria criteria)throws Exception{
+			return dao.listCriteria(criteria);
+		}
+	
 //	
 
 //	

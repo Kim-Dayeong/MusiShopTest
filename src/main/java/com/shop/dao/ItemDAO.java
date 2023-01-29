@@ -2,6 +2,7 @@ package com.shop.dao;
 
 import java.util.List;
 
+import com.shop.domain.Criteria;
 import com.shop.domain.ItemVO;
 
 public interface ItemDAO {
@@ -13,6 +14,12 @@ public interface ItemDAO {
 	
 	//아이템 작성 
 	public void write(ItemVO vo)throws Exception;
+	
+	//페이징 
+	public List<ItemVO> listPaging(int page) throws Exception;
+	
+	public List<ItemVO> listCriteria(Criteria criteria)throws Exception;
+	
 	
 
 //	
